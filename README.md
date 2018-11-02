@@ -1,3 +1,7 @@
+Please give stars if you like it
+
+[Previous abandoned version](https://github.com/abhishekchhibber/Gmail-Api-through-Python) was made by @abhishekchhibber
+
 # Using Gmail API and Python to read mail messages 
 
 I personally find Gmail API to be a bit confusing for beginners. The API’s wizard comes handy to create the project, get credentials, and authenticate them. However, the process that should be followed after that is not mentioned clearly.
