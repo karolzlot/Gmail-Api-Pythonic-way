@@ -67,30 +67,16 @@ for mssg in mssg_list:
 
 	for one in headr: # getting the Subject
 		if one['name'] == 'Subject':
-			msg_subject = one['value']
-			temp_dict['Subject'] = msg_subject
-		else:
-			pass
-
-
-	for two in headr: # getting the date
-		if two['name'] == 'Date':
+			temp_dict['Subject'] = one['value']
+		elif two['name'] == 'Date':
 			msg_date = two['value']
 			date_parse = (parser.parse(msg_date))
 			m_date = (date_parse.date())
 			temp_dict['Date'] = str(m_date)
-		else:
-			pass
-
-	for three in headr: # getting the Sender
-		if three['name'] == 'From':
-			msg_from = three['value']
-			temp_dict['Sender'] = msg_from
-		else:
-			pass
+		elif three['name'] == 'From':
+			temp_dict['Sender'] = msg_from = three['value']
 
 	temp_dict['Snippet'] = message['snippet'] # fetching message snippet
-
 
 	try:
 		
@@ -112,7 +98,7 @@ for mssg in mssg_list:
 	except :
 		pass
 
-	print (temp_dict)
+	print(temp_dict)
 	final_list.append(temp_dict) # This will create a dictonary item in the final list
 	
 	# This will mark the messagea as read
@@ -124,16 +110,12 @@ for mssg in mssg_list:
 print ("Total messaged retrived: ", str(len(final_list)))
 
 '''
-
 The final_list will have dictionary in the following format:
-
 {	'Sender': '"email.com" <name@email.com>', 
 	'Subject': 'Lorem ipsum dolor sit ametLorem ipsum dolor sit amet', 
 	'Date': 'yyyy-mm-dd', 
 	'Snippet': 'Lorem ipsum dolor sit amet'
 	'Message_body': 'Lorem ipsum dolor sit amet'}
-
-
 The dictionary can be exported as a .csv or into a databse
 '''
 
@@ -144,3 +126,4 @@ with open('CSV_NAME.csv', 'w', encoding='utf-8', newline = '') as csvfile:
     writer.writeheader()
     for val in final_list:
     	writer.writerow(val)
+	
