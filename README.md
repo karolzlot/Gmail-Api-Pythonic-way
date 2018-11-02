@@ -1,4 +1,4 @@
-Please give stars if you like it
+Please give stars :-)
 
 [Previous abandoned version](https://github.com/abhishekchhibber/Gmail-Api-through-Python) was made by @abhishekchhibber
 
